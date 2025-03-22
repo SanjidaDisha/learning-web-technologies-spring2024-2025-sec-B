@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <title>Login Validation</title>
+</head>
+<body>
+    <h1 id="head">Login</h1>
+
+    <form method="" action="" onsubmit="return validateForm()">
+        <!-- Username Label and Input -->
+        <label for="user_id">Username:</label>
+        <input type="text" id="user_id" name="user_id" value="" onblur="validateForm()"/>
+        <br><br>
+
+        <!-- Password Label and Input -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" value="" onblur="validateForm()"/>
+        <br><br>
+
+        <!-- Submit Button -->
+        <input type="submit" name="button" id="button" value="Submit" />
+    </form>
+
+    <!-- Forgot Password Link -->
+    <p><a href="forgot_password.html">Forgot Password?</a></p>
+
+    <p id="msg"></p>
+
+    <script>
+        function validateForm() {
+            let user_id = document.getElementById('user_id').value;
+            let password = document.getElementById('password').value;
+            let msg = document.getElementById('msg');
+
+            if (user_id === "" || password === "") {
+                msg.innerHTML = "Please fill in both the Username and Password.";
+                msg.style.color = 'red';
+                return false;
+            } else if (user_id === password) {
+                // Redirect to Homepage (or handle submission here)
+                msg.innerHTML = "";
+                window.location.href = "Homepage.html";
+                return true;
+            } else {
+                msg.innerHTML = "Username and password cannot be the same.";
+                msg.style.color = 'red';
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
