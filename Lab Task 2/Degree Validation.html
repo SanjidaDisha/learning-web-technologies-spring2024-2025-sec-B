@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <title>Gender Validation</title>
+</head>
+<body>
+    
+
+    <form method="" action="" onsubmit="return validateForm()">
+        <!-- Checkbox Selection -->
+        <fieldset>
+            <legend><h1>Degree</h1></legend>
+
+        <input type="checkbox" id="option1" name="option" value="Option1"/>
+        <label for="option1">SSC</label>
+
+       
+        <input type="checkbox" id="option2" name="option" value="Option2"/>
+        <label for="option2">HSC</label>
+
+       
+        <input type="checkbox" id="option3" name="option" value="Option3"/>
+        <label for="option3">BSc</label>
+        </fieldset>
+        <br><br>
+       
+
+        <!-- Submit Button -->
+        <input type="submit" name="button" id="button" value="Submit" />
+    </form>
+
+    <p id="msg"></p>
+
+    <script>
+        function validateForm() {
+            let msg = document.getElementById('msg');
+            let option1 = document.getElementById('option1').checked;
+            let option2 = document.getElementById('option2').checked;
+            let option3 = document.getElementById('option2').checked;
+
+            // Check if at least one option is selected
+            if (!option1 && !option2) {
+                msg.innerHTML = "At least one option must be selected.";
+                msg.style.color = 'red';
+                return false;
+            }
+
+            // If everything is valid
+            msg.innerHTML = "Degree is valid!";
+            msg.style.color = 'green';
+            return true;
+        }
+    </script>
+</body>
+</html>

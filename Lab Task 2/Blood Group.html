@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <title>Blood Group Validation</title>
+</head>
+
+<body>
+
+    <form method="" action="" onsubmit="return validateForm()">
+
+
+
+        <label for="Blood Group">Blood Group:</label>
+
+
+        <select id="dropdown" name="dropdown" onblur="validateForm()">
+            <option value="" disabled selected>A+</option>
+            <option value="Option1">A+</option>
+            <option value="Option2">A-</option>
+            <option value="Option3">B+</option>
+            <option value="Option4">B-</option>
+            <option value="Option5">AB+</option>
+            <option value="Option6">AB-</option>
+            <option value="Option7">O+</option>
+            <option value="Option8">O-</option>
+            
+        </select>
+        <br><br>
+        <hr>
+
+
+        <input type="submit" name="button" id="button" value="Submit" />
+    </form>
+
+    <p id="msg"></p>
+
+    <script>
+        function validateForm() {
+            let dropdown = document.getElementById('dropdown').value;
+            let msg = document.getElementById('msg');
+
+
+            if (dropdown === "") {
+                msg.innerHTML = "Please select an option.";
+                msg.style.color = 'red';
+                return false;
+            }
+            msg.innerHTML = "Selection is valid!";
+            msg.style.color = 'green';
+            return true;
+        }
+    </script>
+</body>
+
+</html>

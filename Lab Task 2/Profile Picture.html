@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <title>User ID and Picture Validation</title>
+</head>
+<body>
+   
+
+
+
+    <form method="" action="" onsubmit="return validateForm()">
+        
+        <fieldset>
+            <legend><h2>Profile Picture</h2></legend>
+
+            <label for="userId">User ID:</label>
+            <input type="number" id="userId" name="userId" min="1"  onblur="validateForm()"/>
+            <br><br>
+        
+
+            <label for="picture">Picture:</label>
+            <input type="file" id="picture" name="picture" accept="image/*" onblur="validateForm()"/>
+            <br><br>
+            <hr>
+
+        <input type="submit" name="button" id="button" value="Submit" />
+    </form>
+</fieldset>
+    <p id="msg"></p>
+
+    <script>
+        function validateForm() {
+            let userId = document.getElementById('userId').value;
+            let picture = document.getElementById('picture').value;
+            let msg = document.getElementById('msg');
+
+           
+            if (userId === "" || userId <= 0) {
+                msg.innerHTML = "User ID cannot be empty and must be a positive number.";
+                msg.style.color = 'red';
+                return false;
+            }
+
+            if (picture === "") {
+                msg.innerHTML = "Please upload a picture.";
+                msg.style.color = 'red';
+                return false;
+            }
+
+            msg.innerHTML = "Form submitted successfully!";
+            msg.style.color = 'green';
+            return true;
+        }
+    </script>
+</body>
+</html>
