@@ -6,7 +6,7 @@
     
 
     <form method="" action="" onsubmit="return validateForm()">
-        <!-- Checkbox Selection -->
+        
         <fieldset>
             <legend><h1>Degree</h1></legend>
 
@@ -23,8 +23,6 @@
         </fieldset>
         <br><br>
        
-
-        <!-- Submit Button -->
         <input type="submit" name="button" id="button" value="Submit" />
     </form>
 
@@ -37,14 +35,12 @@
             let option2 = document.getElementById('option2').checked;
             let option3 = document.getElementById('option2').checked;
 
-            // Check if at least one option is selected
             if (!option1 && !option2) {
                 msg.innerHTML = "At least one option must be selected.";
                 msg.style.color = 'red';
                 return false;
             }
 
-            // If everything is valid
             msg.innerHTML = "Degree is valid!";
             msg.style.color = 'green';
             return true;
